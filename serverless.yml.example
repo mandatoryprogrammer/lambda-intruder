@@ -1,0 +1,11 @@
+service: thelambdaintruder # NOTE: update this with your service name
+provider:
+  name: aws
+  runtime: nodejs8.10
+  role: S3_AND_LAMBDA_INVOKE_ACCESS_IAM_ROLE_ID_HERE # Put a valid AWS role here
+region: us-east-1 # Pick a region and stick to it
+functions:
+  init:
+    handler: handler.init
+    environment:
+      S3_BUCKET: YOUR_RESPONSES_AND_ERRORS_OUTPUT_S3_BUCKET # Your S3 bucket, use the same region
